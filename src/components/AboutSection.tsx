@@ -1,5 +1,10 @@
 import React from 'react';
 import { MapIcon, SunIcon, HeartIcon, GlobeIcon } from 'lucide-react';
+import about2 from '../assets/insta/2.jpeg';
+import about4 from '../assets/insta/4.jpeg';
+import about5 from '../assets/insta/5.jpeg';
+import about6 from '../assets/insta/6.jpeg';
+
 export function AboutSection() {
   return <section className="py-20 bg-gray-50" id="about">
       <div className="container mx-auto px-4">
@@ -74,16 +79,16 @@ export function AboutSection() {
           </div>
           <div className="lg:w-1/2 grid grid-cols-2 gap-4">
             <div className="relative h-64 rounded-lg overflow-hidden">
-              <img src="./src/assets/insta/2.jpeg" alt="About 1" className="w-full h-full object-cover" />
+              <img src={about2} alt="About 1" className="w-full h-full object-cover" />
             </div>
             <div className="relative h-64 rounded-lg overflow-hidden mt-8">
-              <img src="./src/assets/insta/4.jpeg" alt="About 2" className="w-full h-full object-cover" style={{ objectPosition: 'center top' }} />
+              <img src={about4} alt="About 2" className="w-full h-full object-cover" style={{ objectPosition: 'center top' }} />
             </div>
             <div className="relative h-64 rounded-lg overflow-hidden">
-              <img src="./src/assets/insta/5.jpeg" alt="About 3" className="w-full h-full object-cover" style={{ objectPosition: 'center top' }} />
+              <img src={about5} alt="About 3" className="w-full h-full object-cover" style={{ objectPosition: 'center top' }} />
             </div>
             <div className="relative h-64 rounded-lg overflow-hidden mt-8">
-              <img src="./src/assets/insta/6.jpeg" alt="About 4" className="w-full h-full object-cover" />
+              <img src={about6} alt="About 4" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>

@@ -1,33 +1,39 @@
 import React from 'react';
 import { InstagramIcon } from 'lucide-react';
+import insta1 from '../assets/insta/1.jpeg';
+import insta2 from '../assets/insta/2.jpeg';
+import insta3 from '../assets/insta/3.jpeg';
+import insta4 from '../assets/insta/4.jpeg';
+import insta5 from '../assets/insta/5.jpeg';
+import insta6 from '../assets/insta/6.jpeg';
 const instagramPosts = [{
   id: 1,
-  image: './src/assets/insta/1.jpeg',
+  image: insta1,
   likes: 234,
   caption: 'elephant bath pinnawala'
 }, {
   id: 2,
-  image: './src/assets/insta/2.jpeg',
+  image: insta2,
   likes: 456,
   caption: 'Minneriya national park'
 }, {
   id: 3,
-  image: './src/assets/insta/3.jpeg',
+  image: insta3,
   likes: 789,
   caption: 'kandy tooth temple'
 }, {
   id: 4,
-  image: './src/assets/insta/4.jpeg',
+  image: insta4,
   likes: 321,
   caption: 'dambulla cave temple'
 }, {
   id: 5,
-  image: './src/assets/insta/5.jpeg',
+  image: insta5,
   likes: 567,
   caption: 'dambulla cave temple'
 }, {
   id: 6,
-  image: './src/assets/insta/6.jpeg',
+  image: insta6,
   likes: 890,
   caption: 'diyaluma upper water fall'
 }];

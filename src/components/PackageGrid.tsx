@@ -1,44 +1,50 @@
 import React from 'react';
 import { MapPinIcon, CalendarIcon } from 'lucide-react';
+import pkg1 from '../assets/Packages/12.jpeg';
+import pkg2 from '../assets/Packages/8.jpeg';
+import pkg3 from '../assets/Packages/9.jpeg';
+import pkg4 from '../assets/Packages/10.jpeg';
+import pkg5 from '../assets/Packages/11.jpeg';
+import pkg6 from '../assets/Packages/13.jpeg';
 const packages = [{
   id: 1,
   title: 'Cultural Triangle Explorer',
-  image: './src/assets/Packages/12.jpeg',
+  image: pkg1,
   duration: '7 Days',
   price: '$899',
   location: 'Kandy, Sigiriya, Anuradhapura'
 }, {
   id: 2,
   title: 'Coastal Paradise Retreat',
-  image: './src/assets/Packages/8.jpeg',
+  image: pkg2,
   duration: '5 Days',
   price: '$699',
   location: 'Mirissa, Unawatuna, Galle'
 }, {
   id: 3,
   title: 'Tea Country Expedition',
-  image: './src/assets/Packages/9.jpeg',
+  image: pkg3,
   duration: '4 Days',
   price: '$599',
   location: 'Nuwara Eliya, Ella, Haputale'
 }, {
   id: 4,
   title: 'Wildlife Safari Adventure',
-  image: './src/assets/Packages/10.jpeg',
+  image: pkg4,
   duration: '6 Days',
   price: '$799',
   location: 'Yala, Udawalawe, Minneriya'
 }, {
   id: 5,
   title: 'nine arche',
-  image: './src/assets/Packages/11.jpeg',
+  image: pkg5,
   duration: '8 Days',
   price: '$1099',
   location: 'Bentota, Beruwala, Hikkaduwa'
 }, {
   id: 6,
   title: 'Adventure & Hiking Tour',
-  image: './src/assets/Packages/13.jpeg',
+  image: pkg6,
   duration: '6 Days',
   price: '$749',
   location: "Adam's Peak, Knuckles, Horton Plains"
