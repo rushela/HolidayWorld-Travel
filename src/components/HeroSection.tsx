@@ -5,9 +5,9 @@ export function HeroSection() {
   return <section className="relative h-screen w-full overflow-hidden" id="home">
       {/* Video Background */}
       <div className="absolute inset-0">
-        <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-          <source src="src/assets/videoplayback (4).mp4" type="video/mp4" />
-        </video>
+      <video autoPlay loop muted playsInline className="w-full h-full object-cover">
+        <source src="/assets/hero-video.mp4" type="video/mp4" />
+      </video>
         <div className="absolute inset-0 bg-black bg-opacity-50" />
       </div>
       {/* Content */}
