@@ -17,7 +17,7 @@ export function App() {
   return <div className="w-full min-h-screen bg-white">
       <Header />
       <main>
-        <HeroSection />
+        <HeroSection onBookingClick={() => setBookingOpen(true)} />
         <ServiceCards />
         <AboutSection />
         <PackageGrid />

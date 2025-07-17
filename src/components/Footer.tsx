@@ -14,18 +14,20 @@ export function Footer() {
               preferences.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="bg-gray-700 hover:bg-teal-500 p-2 rounded-full transition-colors duration-300">
+              <a href="https://www.facebook.com/share/16X5aVdcHe/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="bg-gray-700 hover:bg-teal-500 p-2 rounded-full transition-colors duration-300">
                 <FacebookIcon size={20} />
               </a>
-              <a href="#" className="bg-gray-700 hover:bg-teal-500 p-2 rounded-full transition-colors duration-300">
+              <a href="https://www.instagram.com/holidayworldt?igsh=MXczZjF1YWtwOXp3dQ==" target="_blank" rel="noopener noreferrer" className="bg-gray-700 hover:bg-teal-500 p-2 rounded-full transition-colors duration-300">
                 <InstagramIcon size={20} />
               </a>
+              {/*
               <a href="#" className="bg-gray-700 hover:bg-teal-500 p-2 rounded-full transition-colors duration-300">
                 <TwitterIcon size={20} />
               </a>
               <a href="#" className="bg-gray-700 hover:bg-teal-500 p-2 rounded-full transition-colors duration-300">
                 <YoutubeIcon size={20} />
               </a>
+              */}
             </div>
           </div>
           <div>
@@ -53,20 +55,21 @@ export function Footer() {
             <div className="space-y-4">
               <p className="flex items-start">
                 <PhoneIcon size={20} className="mr-3 text-teal-400 flex-shrink-0" />
-                <span className="text-gray-300">+94 11 234 5678</span>
+                <span className="text-gray-300">+94 77 391 4455</span>
               </p>
               <p className="flex items-start">
                 <MailIcon size={20} className="mr-3 text-teal-400 flex-shrink-0" />
-                <span className="text-gray-300">info@holidayworld.lk</span>
+                <span className="text-gray-300">holidayworldt@gmail.com</span>
               </p>
               <div>
-                <h5 className="font-semibold mb-2">Subscribe to Newsletter</h5>
+                {/* Newsletter subscription hidden as requested
                 <form className="flex">
                   <input type="email" placeholder="Your email" className="px-4 py-2 rounded-l-lg flex-grow text-gray-800 focus:outline-none" />
                   <button type="submit" className="bg-teal-500 hover:bg-teal-600 px-4 py-2 rounded-r-lg transition-colors duration-300">
                     Go
                   </button>
                 </form>
+                */}
               </div>
             </div>
           </div>

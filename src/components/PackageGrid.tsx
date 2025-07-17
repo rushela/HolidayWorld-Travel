@@ -6,6 +6,7 @@ import pkg3 from '../assets/Packages/9.jpeg';
 import pkg4 from '../assets/Packages/10.jpeg';
 import pkg5 from '../assets/Packages/11.jpeg';
 import pkg6 from '../assets/Packages/13.jpeg';
+import tripadLogo from '../assets/tripad.png';
 const packages = [{
   id: 1,
   title: 'Cultural Triangle Explorer',
@@ -83,18 +84,24 @@ export function PackageGrid() {
                   <span className="text-sm">{pkg.duration}</span>
                 </div>
                 <a href={tripAdvisorUrl} target="_blank" rel="noopener noreferrer">
-                  <button className="w-full bg-teal-500 hover:bg-teal-600 text-white py-2 rounded-md transition-colors duration-300">
-                    View Details
-                  </button>
+                <button className="w-full bg-teal-500 hover:bg-teal-600 text-white py-2 rounded-md transition-colors duration-300">
+                  View Details
+                </button>
                 </a>
               </div>
             </div>)}
         </div>
         <div className="text-center mt-12">
           <a href={tripAdvisorUrl} target="_blank" rel="noopener noreferrer">
-            <button className="border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white px-8 py-3 rounded-full font-medium transition-colors duration-300">
-              View All Packages
-            </button>
+          <button className="flex items-center justify-center gap-3 border-2 border-[#00AF87] bg-[#00AF87] text-white hover:bg-[#008f6e] hover:border-[#008f6e] px-4 py-1.5 rounded-full font-semibold transition-all duration-300 mx-auto text-base shadow-md hover:shadow-xl transform hover:scale-105">
+            <span className="flex items-center justify-center h-10 w-10 rounded-full bg-[#00AF87]">
+              <img src={tripadLogo} alt="TripAdvisor Logo" className="h-8 w-8 object-contain" />
+            </span>
+            View more on Tripadvisor
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.2" stroke="currentColor" className="w-5 h-5 ml-2 text-white">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
           </a>
         </div>
       </div>

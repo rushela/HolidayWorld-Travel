@@ -1,39 +1,44 @@
 import React, { useEffect, useState, useRef, memo } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon, StarIcon } from 'lucide-react';
+import ralphImg from '../assets/feedbacks/ralph.png';
+import feedback2Img from '../assets/feedbacks/2.png';
+import feedback3Img from '../assets/feedbacks/3.png';
+import feedback4Img from '../assets/feedbacks/4.png';
+import feedback5Img from '../assets/feedbacks/5.png';
 const testimonials = [{
   id: 1,
-  name: 'Sarah Johnson',
-  location: 'United Kingdom',
-  image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80',
-  text: 'Our trip to Sri Lanka with Holiday World was absolutely magical. The attention to detail and personalized service made all the difference. From tea plantations to pristine beaches, every moment was perfect.',
+  name: 'Ralph H',
+  location: 'Netherlands',
+  image: ralphImg,
+  text: 'We had the absolute pleasure of having Harsha as our private guide during our journey through Sri Lanka — and it truly made our honeymoon unforgettable...',
   rating: 5
 }, {
   id: 2,
-  name: 'Michael Chen',
-  location: 'Australia',
-  image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80',
-  text: 'The wildlife safari exceeded all our expectations. Our guide was incredibly knowledgeable and made sure we had the best possible experience. We saw elephants, leopards, and so many beautiful birds!',
+  name: 'Marjolein',
+  location: 'Rotterdam, The Netherlands',
+  image: feedback2Img,
+  text: 'Harsha is truly the best tour guide we could have ever wished for on our first trip to Sri Lanka...',
   rating: 5
 }, {
   id: 3,
-  name: 'Elena Rodriguez',
-  location: 'Spain',
-  image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80',
-  text: "Holiday World created the perfect balance of adventure, culture, and relaxation. The cultural experiences were authentic and the accommodations were spectacular. I'll definitely be back!",
+  name: 'Moni G',
+  location: 'Germany',
+  image: feedback3Img,
+  text: "I was very lucky and was allowed to travel with Harsha for 10 days.I have travelled a lot and had experiences with very good guides - Harsha topped them all!!!",
   rating: 5
 }, {
   id: 4,
-  name: 'David Müller',
-  location: 'Germany',
-  image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80',
-  text: "From the moment we arrived, everything was taken care of. The local insights from our guide made this trip special - we experienced Sri Lanka in a way that wouldn't have been possible on our own.",
+  name: 'Joshua R',
+  location: 'United Kingdom',
+  image: feedback4Img,
+  text: "Harsha is a truly incredible person - his knowledge, passion and love for Sri Lanka is exceptional and clear to see...",
   rating: 5
 }, {
   id: 5,
-  name: 'Aiko Tanaka',
-  location: 'Japan',
-  image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80',
-  text: 'The food tours and cooking classes were highlights of our trip. We learned so much about Sri Lankan cuisine and culture. Holiday World created memories that will last a lifetime.',
+  name: 'GlobeTrotting642026',
+  location: 'United Kingdom',
+  image: feedback5Img,
+  text: 'Our first visit we are already longing to return . Harsha our professional tour guide and Driver accompanied us throughout our entire time of the trip ...',
   rating: 5
 }];
 export function TestimonialSection() {
@@ -72,21 +77,77 @@ export function TestimonialSection() {
             <div className="flex transition-transform duration-500 ease-in-out" style={{
             transform: `translateX(-${currentSlide * 100}%)`
           }}>
-              {testimonials.map(testimonial => <div key={testimonial.id} className="w-full flex-shrink-0 px-4">
-                  <div className="bg-white rounded-lg shadow-lg p-8 text-center">
+              {testimonials.map(testimonial => {
+                const cardContent = (
+                  <>
                     <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-6 border-4 border-teal-100">
                       <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" />
                     </div>
                     <div className="flex justify-center mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => <StarIcon key={i} size={20} className="fill-current text-yellow-400" />)}
                     </div>
+                    {testimonial.id === 1 && (
+                      <div className="mb-3">
+                        <span className="font-bold text-lg block">Exceptional Private Tour with Knowledgeable and Caring Guide</span>
+                      </div>
+                    )}
+                    {testimonial.id === 2 && (
+                      <div className="mb-3">
+                        <span className="font-bold text-lg block">The BEST Honeymoon trip to Sri Lanka - thank you Harsha!!</span>
+                      </div>
+                    )}
+                    {testimonial.id === 3 && (
+                      <div className="mb-3">
+                        <span className="font-bold text-lg block">DANKE Harsha! A PERFECT HOLIDAY - it couldn't be better!</span>
+                      </div>
+                    )}
+                    {testimonial.id === 4 && (
+                      <div className="mb-3">
+                        <span className="font-bold text-lg block">Harsha - Sri Lanka’s Best Tour Guide</span>
+                      </div>
+                    )}
+                    {testimonial.id === 5 && (
+                      <div className="mb-3">
+                        <span className="font-bold text-lg block">Sri Lanka 🇱🇰 invigorating, fascinating history & culturally exciting</span>
+                      </div>
+                    )}
                     <blockquote className="text-gray-600 italic mb-6">
                       "{testimonial.text}"
                     </blockquote>
                     <h4 className="font-bold text-lg">{testimonial.name}</h4>
                     <p className="text-gray-500">{testimonial.location}</p>
+                  </>
+                );
+                return (
+                  <div key={testimonial.id} className="w-full flex-shrink-0 px-4">
+                    {testimonial.id === 1 ? (
+                      <a href="https://www.tripadvisor.co.uk/ShowUserReviews-g2674028-d18769629-r1017448892-HOLIDAY_WORLD_TRAVEL_SRI_LANKA-Ragama_Western_Province.html" target="_blank" rel="noopener noreferrer" className="block bg-white rounded-lg shadow-lg p-8 text-center transition-transform duration-200 hover:scale-105 focus:scale-105">
+                        {cardContent}
+                      </a>
+                    ) : testimonial.id === 2 ? (
+                      <a href="https://www.tripadvisor.co.uk/ShowUserReviews-g2674028-d18769629-r1017513969-HOLIDAY_WORLD_TRAVEL_SRI_LANKA-Ragama_Western_Province.html" target="_blank" rel="noopener noreferrer" className="block bg-white rounded-lg shadow-lg p-8 text-center transition-transform duration-200 hover:scale-105 focus:scale-105">
+                        {cardContent}
+                      </a>
+                    ) : testimonial.id === 3 ? (
+                      <a href="https://www.tripadvisor.co.uk/ShowUserReviews-g2674028-d18769629-r1009899410-HOLIDAY_WORLD_TRAVEL_SRI_LANKA-Ragama_Western_Province.html" target="_blank" rel="noopener noreferrer" className="block bg-white rounded-lg shadow-lg p-8 text-center transition-transform duration-200 hover:scale-105 focus:scale-105">
+                        {cardContent}
+                      </a>
+                    ) : testimonial.id === 4 ? (
+                      <a href="https://www.tripadvisor.co.uk/ShowUserReviews-g2674028-d18769629-r1006251538-HOLIDAY_WORLD_TRAVEL_SRI_LANKA-Ragama_Western_Province.html" target="_blank" rel="noopener noreferrer" className="block bg-white rounded-lg shadow-lg p-8 text-center transition-transform duration-200 hover:scale-105 focus:scale-105">
+                        {cardContent}
+                      </a>
+                    ) : testimonial.id === 5 ? (
+                      <a href="https://www.tripadvisor.co.uk/ShowUserReviews-g2674028-d18769629-r997881350-HOLIDAY_WORLD_TRAVEL_SRI_LANKA-Ragama_Western_Province.html" target="_blank" rel="noopener noreferrer" className="block bg-white rounded-lg shadow-lg p-8 text-center transition-transform duration-200 hover:scale-105 focus:scale-105">
+                        {cardContent}
+                      </a>
+                    ) : (
+                      <div className="bg-white rounded-lg shadow-lg p-8 text-center">
+                        {cardContent}
+                      </div>
+                    )}
                   </div>
-                </div>)}
+                );
+              })}
             </div>
           </div>
           <button className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 bg-white rounded-full shadow-lg p-3 text-teal-500 hover:text-teal-700 transition-colors duration-300" onClick={prevSlide}>

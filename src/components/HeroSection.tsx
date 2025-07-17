@@ -1,13 +1,29 @@
 import React, { useState } from 'react';
 import { Search, MapPin, Calendar, Users } from 'lucide-react';
-export function HeroSection() {
+import heroVideo from '../assets/hero-video.mp4';
+
+interface HeroSectionProps {
+  onBookingClick?: () => void;
+}
+
+export function HeroSection({ onBookingClick }: HeroSectionProps) {
   const [searchFocused, setSearchFocused] = useState(false);
+  
+  // Get today's date in YYYY-MM-DD format for min attribute
+  const today = new Date().toISOString().split('T')[0];
+  
+  const handleBookNowClick = () => {
+    if (onBookingClick) {
+      onBookingClick();
+    }
+  };
+  
   return <section className="relative h-screen w-full overflow-hidden" id="home">
       {/* Video Background */}
       <div className="absolute inset-0">
-      <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-        <source src="/assets/hero-video.mp4" type="video/mp4" />
-      </video>
+        <video autoPlay loop muted playsInline className="w-full h-full object-cover">
+          <source src={heroVideo} type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-black bg-opacity-50" />
       </div>
       {/* Content */}
@@ -19,35 +35,53 @@ export function HeroSection() {
           Experience the magic of paradise island through authentic local
           experiences
         </p>
-        {/* Search Bar */}
-        {/*
-        <div className={`w-full max-w-4xl bg-white rounded-2xl p-4 transition-all duration-300 ${searchFocused ? 'shadow-2xl transform -translate-y-1' : 'shadow-xl'}`}>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div className="relative">
-              <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
-              <input type="text" placeholder="Where to?" className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500" onFocus={() => setSearchFocused(true)} onBlur={() => setSearchFocused(false)} />
-            </div>
-            <div className="relative">
-              <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
-              <input type="date" className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500" onFocus={() => setSearchFocused(true)} onBlur={() => setSearchFocused(false)} />
-            </div>
-            <div className="relative">
-              <Users className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
-              <select className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500" onFocus={() => setSearchFocused(true)} onBlur={() => setSearchFocused(false)}>
-                <option value="">Travelers</option>
-                <option value="1">1 Traveler</option>
-                <option value="2">2 Travelers</option>
-                <option value="3">3 Travelers</option>
-                <option value="4">4+ Travelers</option>
-              </select>
-            </div>
-            <button className="bg-teal-500 hover:bg-teal-600 text-white font-medium py-3 px-6 rounded-xl transition-colors duration-300 flex items-center justify-center">
-              <Search size={20} className="mr-2" />
-              Search
-            </button>
+        {/* Booking Bar */}
+        {false && (
+        <div className={`w-full max-w-4xl bg-white rounded-3xl p-4 shadow-2xl flex flex-col md:flex-row items-center gap-4 md:gap-0`}>
+          <div className="flex-1 flex items-center bg-gray-50 rounded-xl px-4 py-3 mr-0 md:mr-2 border border-gray-200">
+            <MapPin className="text-gray-400 mr-3" size={20} />
+            <input
+              type="text"
+              placeholder="Select Destination"
+              className="bg-transparent outline-none w-full text-gray-700 placeholder-gray-400 text-sm font-medium"
+              onFocus={() => setSearchFocused(true)}
+              onBlur={() => setSearchFocused(false)}
+            />
           </div>
+          <div className="flex-1 flex items-center bg-gray-50 rounded-xl px-4 py-3 mr-0 md:mr-2 border border-gray-200">
+            <Calendar className="text-gray-400 mr-3" size={20} />
+            <input
+              type="date"
+              min={today}
+              className="bg-transparent outline-none w-full text-gray-700 placeholder-gray-400 text-sm font-medium"
+              onFocus={() => setSearchFocused(true)}
+              onBlur={() => setSearchFocused(false)}
+            />
+          </div>
+          <div className="flex-1 flex items-center bg-gray-50 rounded-xl px-4 py-3 mr-0 md:mr-2 border border-gray-200">
+            <Users className="text-gray-400 mr-3" size={20} />
+            <select
+              className="bg-transparent outline-none w-full text-gray-700 placeholder-gray-400 text-sm font-medium"
+              onFocus={() => setSearchFocused(true)}
+              onBlur={() => setSearchFocused(false)}
+            >
+              <option value="">Guests</option>
+              <option value="1">1 Guest</option>
+              <option value="2">2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4+ Guests</option>
+            </select>
+          </div>
+          <button
+            onClick={handleBookNowClick}
+            className="flex items-center justify-center bg-teal-600 hover:bg-teal-700 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition-all duration-200 ml-0 md:ml-2 w-full md:w-auto text-sm"
+            style={{ minWidth: 180 }}
+          >
+            <Search size={18} className="mr-2" />
+            Check Availability
+          </button>
         </div>
-        */}
+        )}
       </div>
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
