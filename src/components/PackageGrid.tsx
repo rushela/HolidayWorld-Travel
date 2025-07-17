@@ -10,15 +10,11 @@ const packages = [{
   id: 1,
   title: 'Cultural Triangle Explorer',
   image: pkg1,
-  duration: '7 Days',
-  price: '$899',
   location: 'Kandy, Sigiriya, Anuradhapura'
 }, {
   id: 2,
   title: 'Coastal Paradise Retreat',
   image: pkg2,
-  duration: '5 Days',
-  price: '$699',
   location: 'Mirissa, Unawatuna, Galle'
 }, {
   id: 3,
