@@ -10,7 +10,6 @@ export function ContactSection() {
   const [loading, setLoading] = useState(false);
 
   const message = `Name: ${form.name}\nEmail: ${form.email}\nSubject: ${form.subject}\nMessage: ${form.message}`;
-  const subject = form.subject || "Holiday World Inquiry";
 
   const isFormValid = form.name.trim() && form.email.trim() && form.subject.trim() && form.message.trim();
 

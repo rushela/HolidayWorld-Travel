@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Search, MapPin, Calendar, Users } from 'lucide-react';
-import heroVideo from '../assets/hero-video.mp4';
+import heroImage1 from '../assets/9arch.jpg';
+import heroImage2 from '../assets/beach.jpg';
+import heroImage3 from '../assets/sigiri.jpg';
+import heroImage4 from '../assets/tea.jpg';
 
 interface HeroSectionProps {
   onBookingClick?: () => void;
@@ -12,6 +15,25 @@ export function HeroSection({ onBookingClick }: HeroSectionProps) {
   // Get today's date in YYYY-MM-DD format for min attribute
   const today = new Date().toISOString().split('T')[0];
   
+  // Cycle through hero images every 3 seconds
+  const heroImages = [heroImage1, heroImage2, heroImage3, heroImage4];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 6000); // 6 seconds
+    return () => clearInterval(interval);
+  }, []);
+
+  // Scroll to hero section on mount
+  useEffect(() => {
+    const heroSection = document.getElementById('home');
+    if (heroSection) {
+      heroSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, []);
+  const selectedHeroImage = heroImages[currentIndex];
+  
   const handleBookNowClick = () => {
     if (onBookingClick) {
       onBookingClick();
@@ -19,11 +41,13 @@ export function HeroSection({ onBookingClick }: HeroSectionProps) {
   };
   
   return <section className="relative h-screen w-full overflow-hidden" id="home">
-      {/* Video Background */}
+      {/* Image Background */}
       <div className="absolute inset-0">
-        <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-          <source src={heroVideo} type="video/mp4" />
-        </video>
+        <img
+          src={selectedHeroImage}
+          alt="Hero Background"
+          className="w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-black bg-opacity-50" />
       </div>
       {/* Content */}

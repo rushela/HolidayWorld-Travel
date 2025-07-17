@@ -1,4 +1,3 @@
-import React from 'react';
 import { MapPinIcon, CalendarIcon } from 'lucide-react';
 import pkg1 from '../assets/Packages/12.jpeg';
 import pkg2 from '../assets/Packages/8.jpeg';

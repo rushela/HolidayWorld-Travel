@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, memo } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon, StarIcon } from 'lucide-react';
 import ralphImg from '../assets/feedbacks/ralph.png';
 import feedback2Img from '../assets/feedbacks/2.png';
