@@ -140,7 +140,7 @@ export function ContactSection() {
                 <textarea id="message" name="message" value={form.message} onChange={handleChange} rows={5} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent" placeholder="Tell us about your travel plans..."></textarea>
               </div>
               <button type="submit" className="w-full bg-teal-500 hover:bg-teal-600 text-white py-3 px-6 rounded-lg font-medium transition-colors duration-300 flex justify-center items-center" disabled={!isFormValid || loading}>
-                {loading ? 'Sending...' : 'Send Message'} <SendIcon size={18} className="ml-2" />
+                {loading ? 'Sending...' : 'Send via Email'} <SendIcon size={18} className="ml-2" />
               </button>
             </form>
             <div className="flex gap-4 mt-4">
