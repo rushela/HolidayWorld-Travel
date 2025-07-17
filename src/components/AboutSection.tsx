@@ -1,23 +1,14 @@
-import React from 'react';
 import { MapIcon, SunIcon, HeartIcon, GlobeIcon } from 'lucide-react';
-import about2 from '../assets/insta/2.jpeg';
 import about4 from '../assets/insta/4.jpeg';
 import about5 from '../assets/insta/5.jpeg';
 import about6 from '../assets/insta/6.jpeg';
-import chubby from '../assets/about/chubby.png';
+import chubbyJpeg from '../assets/chubby.jpeg';
 
 export function AboutSection() {
   return <section className="py-20 bg-gray-50 relative" id="about">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center">
           <div className="lg:w-1/2 lg:pr-12 mb-10 lg:mb-0 relative">
-            {/* Watermark image */}
-            <img
-              src={chubby}
-              alt="Watermark"
-              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-50 pointer-events-none select-none w-[40rem] h-[40rem] object-contain z-0"
-              aria-hidden="true"
-            />
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 About Holiday World
@@ -89,7 +80,7 @@ export function AboutSection() {
           </div>
           <div className="lg:w-1/2 grid grid-cols-2 gap-4">
             <div className="relative h-64 rounded-lg overflow-hidden">
-              <img src={about2} alt="About 1" className="w-full h-full object-cover" />
+              <img src={chubbyJpeg} alt="About Harsha" className="w-full h-full object-cover object-top" />
             </div>
             <div className="relative h-64 rounded-lg overflow-hidden mt-8">
               <img src={about4} alt="About 2" className="w-full h-full object-cover" style={{ objectPosition: 'center top' }} />

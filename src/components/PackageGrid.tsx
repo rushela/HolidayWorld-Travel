@@ -1,4 +1,4 @@
-import { MapPinIcon, CalendarIcon } from 'lucide-react';
+import { MapPinIcon } from 'lucide-react';
 import pkg1 from '../assets/Packages/12.jpeg';
 import pkg2 from '../assets/Packages/8.jpeg';
 import pkg3 from '../assets/Packages/9.jpeg';
@@ -10,40 +10,40 @@ const packages = [{
   id: 1,
   title: 'Cultural Triangle Explorer',
   image: pkg1,
-  location: 'Kandy, Sigiriya, Anuradhapura'
+  location: 'Dambulla, Sigiriya, Anuradhapura, Polonnaruwa'
 }, {
   id: 2,
   title: 'Coastal Paradise Retreat',
   image: pkg2,
-  location: 'Mirissa, Unawatuna, Galle'
+  location: 'Trincomalee, pasikuda, Arugambay, Mirissa, Unawatuna, Hikkaduwa'
 }, {
   id: 3,
   title: 'Tea Country Expedition',
   image: pkg3,
   duration: '4 Days',
   price: '$599',
-  location: 'Nuwara Eliya, Ella, Haputale'
+  location: 'Nuwaraeliya, Hatton, Haputale'
 }, {
   id: 4,
   title: 'Wildlife Safari Adventure',
   image: pkg4,
   duration: '6 Days',
   price: '$799',
-  location: 'Yala, Udawalawe, Minneriya'
+  location: 'Minneriya, Udawalawa, Yala, Wilpaththu'
 }, {
   id: 5,
   title: 'nine arche',
   image: pkg5,
   duration: '8 Days',
   price: '$1099',
-  location: 'Bentota, Beruwala, Hikkaduwa'
+  location: 'Ella'
 }, {
   id: 6,
   title: 'Adventure & Hiking Tour',
   image: pkg6,
   duration: '6 Days',
   price: '$749',
-  location: "Adam's Peak, Knuckles, Horton Plains"
+  location: "Pekoe trail, Little Adams’s peak, Horton plains, Ell rock, Upper diyaluma water falls"
 }];
 const tripAdvisorUrl = 'https://www.tripadvisor.co.uk/Attraction_Review-g2674028-d18769629-Reviews-HOLIDAY_WORLD_TRAVEL_SRI_LANKA-Ragama_Western_Province.html';
 export function PackageGrid() {
@@ -74,15 +74,6 @@ export function PackageGrid() {
                   <MapPinIcon size={18} className="mr-2 text-coral-500" />
                   <span className="text-sm">{pkg.location}</span>
                 </div>
-                <div className="flex items-center mb-4 text-gray-600">
-                  <CalendarIcon size={18} className="mr-2 text-coral-500" />
-                  <span className="text-sm">{pkg.duration}</span>
-                </div>
-                <a href={tripAdvisorUrl} target="_blank" rel="noopener noreferrer">
-                <button className="w-full bg-teal-500 hover:bg-teal-600 text-white py-2 rounded-md transition-colors duration-300">
-                  View Details
-                </button>
-                </a>
               </div>
             </div>)}
         </div>
