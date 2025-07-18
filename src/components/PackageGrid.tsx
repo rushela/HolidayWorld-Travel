@@ -43,7 +43,7 @@ const packages = [{
   image: pkg6,
   duration: '6 Days',
   price: '$749',
-  location: "Pekoe trail, Little Adams’s peak, Horton plains, Ell rock, Upper diyaluma water falls"
+  location: "Pekoe trail, Little Adams’s peak, Horton plains, Ella rock, Upper diyaluma water falls"
 }];
 const tripAdvisorUrl = 'https://www.tripadvisor.co.uk/Attraction_Review-g2674028-d18769629-Reviews-HOLIDAY_WORLD_TRAVEL_SRI_LANKA-Ragama_Western_Province.html';
 export function PackageGrid() {
